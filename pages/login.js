@@ -41,7 +41,7 @@ const Login = () => {
     setIsLoading(true);
 
     if (email) {
-      if (email === "kulkarni.ankita09@gmail.com") {
+      if (email === "joshua.constine97@gmail.com") {
         //  log in a user by their email
         try {
           const didToken = await magic.auth.loginWithMagicLink({
