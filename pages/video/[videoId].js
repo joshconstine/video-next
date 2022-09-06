@@ -4,11 +4,13 @@ import styles from "../../styles/Video.module.css";
 import clsx from "classnames";
 import { getYoutubeVideoById } from "../../lib/videos";
 Modal.setAppElement("#__next");
+import Navbar from "../../components/nav/Navbar";
 
-export async function getStaticProps() {
+export async function getStaticProps(context) {
   //data to fetch from API
-  const videoId = "4zH5iYM4wJo";
+  console.log({ context });
 
+  const videoId = context.params.videoId;
   const videoArray = await getYoutubeVideoById(videoId);
 
   return {
@@ -43,6 +45,7 @@ const Video = ({ video }) => {
 
   return (
     <div className={styles.container}>
+      <Navbar />
       <Modal
         isOpen={true}
         contentLabel="Watch the video"
