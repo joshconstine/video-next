@@ -8,7 +8,6 @@ import Navbar from "../../components/nav/Navbar";
 
 export async function getStaticProps(context) {
   //data to fetch from API
-  console.log({ context });
 
   const videoId = context.params.videoId;
   const videoArray = await getYoutubeVideoById(videoId);
@@ -33,7 +32,6 @@ export async function getStaticPaths() {
 
 const Video = ({ video }) => {
   const router = useRouter();
-  console.log({ router });
 
   const {
     title,
